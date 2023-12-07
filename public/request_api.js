@@ -22,8 +22,6 @@ async function connectToOpenAI(event) {
     resultContainer.innerHTML = "";
     let endpoint = "";
 
-    console.log(event.target.getAttribute('id'));
-
     switch (event.target.getAttribute('id')) {
         case "spell-btn":
             endpoint = "/spell-check";
