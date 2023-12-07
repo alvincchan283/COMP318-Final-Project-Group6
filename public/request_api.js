@@ -19,6 +19,10 @@ document.querySelectorAll('button').forEach(button => {
             return;
         }
 
+        const resultContainer = document.querySelector('#result');
+        resultContainer.innerHTML = "";
+        displayAlert("Request submitted, waiting for ChatGPT responses ......", "success");
+
         try {
             const response = await fetch('/', {
                 method: 'POST',
@@ -30,12 +34,12 @@ document.querySelectorAll('button').forEach(button => {
                 })
             });
             
-            const resultContainer = document.querySelector('#result');
             const reply = await response.json();
-            resultContainer.textContent = reply.response;
-            
+            resultContainer.innerHTML = reply.replyText;
+            displayAlert(null);
+
           } catch (error) {
-            console.error(error);
+            displayAlert(error);
           }
     });
 })
