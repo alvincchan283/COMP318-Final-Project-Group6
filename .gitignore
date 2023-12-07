@@ -1,0 +1,9 @@
+# Dependencies
+node_modules
+
+# API Keys
+.env
+
+# Misc
+.DS_Store
+desktop.ini
