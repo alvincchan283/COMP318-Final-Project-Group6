@@ -1,5 +1,8 @@
 import express from "express";
+import OpenAI from "openai";
+
 const router = express.Router();
+const openai = new OpenAI();
 
 // Spell check
 router.post('/spell-check', async (req, res) => {
@@ -69,4 +72,4 @@ router.post('/summarize', async (req, res) => {
     res.send({ replyText });
 });
 
-module.exports = router;
+export default router;

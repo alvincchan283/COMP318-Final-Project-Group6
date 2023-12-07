@@ -1,10 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import OpenAI from 'openai';
 import 'dotenv/config';
-import helper from 'api/helper';
+import helper from './api/helper.js';
 
-const openai = new OpenAI();
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
